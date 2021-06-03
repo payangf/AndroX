@@ -25,7 +25,7 @@ clean:
 
 PWD:=$(shell pwd -P)
 
-TEST_SRC = $(srcdir)/testsuite/dwz.tests
+TEST_SRC = $(srcdir)/testsuite/dwzs
 TEST_EXECS_DWARF_ASM = no-multifile-prop invalid-dw-at-stmt-list-encoding \
 		       unavailable-dwarf-piece
 TEST_EXECS_x86_64 = py-section-script dw2-skip-prologue \
@@ -94,7 +94,7 @@ TEMP_ASM_FILES=$(addsuffix -dw.S, $(TEST_EXECS_DWARF_ASM))
 $(TEMP_ASM_FILES): %-dw.S: $(TEST_SRC)/../lib/%.exp
 	export POINTER_SIZE=$(POINTER_SIZE); \
 	  export DEJAGNU=$(DEJAGNU); \
-	  runtest --tool=dwz -srcdir $(srcdir)/testsuite/ lib/$*.exp
+	  runtest --tool=dwz -srcdir $(srcdir)/testsuite/lib/$*.exp
 
 $(filter-out no-multifile-prop, $(TEST_EXECS_DWARF_ASM)): %: %-dw.S
 	$(CC) $(TEST_SRC)/main.c $< -o $@
