@@ -1,0 +1,16 @@
+[html]
+ repositoryformatversion = 0
+ filemode = false
+ bare = false
+ logallrefupdates = true
+ symlinks = true
+ hardlinks = true
+ ignorecase = false
+ force = true
+
+[remote "."]
+ fetch = refs/heads/:ref/remotes/origin/:
+ url ==
+[branch "."]
+ merge ==
+ remote ==
