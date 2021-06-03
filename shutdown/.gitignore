@@ -1,0 +1,4 @@
+*.o
+*.exe
+extras/shutdown-*
+extras/*.bz2
